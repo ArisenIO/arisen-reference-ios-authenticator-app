@@ -7,59 +7,59 @@ use_frameworks!
 inhibit_all_warnings!
 
 def set_up_local_pods
-    pod 'EosioSwift', :path => '../eosio-swift'
-    pod 'EosioSwiftAbieosSerializationProvider', :path => '../eosio-swift-abieos-serialization-provider'
-    pod 'EosioSwiftVault', :path => '../eosio-swift-vault'
-    pod 'EosioSwiftEcc', :path => '../eosio-swift-ecc'
-    pod 'EosioSwiftVaultSignatureProvider', :path => '../eosio-swift-vault-signature-provider'
-    pod 'EosioSwiftReferenceAuthenticatorSignatureProvider', :path => '../eosio-swift-reference-ios-authenticator-signature-provider'
+    pod 'ArisenSwift', :path => '../arisen-swift'
+    pod 'ArisenSwiftAbieosSerializationProvider', :path => '../arisen-swift-abieos-serialization-provider'
+    pod 'ArisenSwiftVault', :path => '../arisen-swift-vault'
+    pod 'ArisenSwiftEcc', :path => '../arisen-swift-ecc'
+    pod 'ArisenSwiftVaultSignatureProvider', :path => '../arisen-swift-vault-signature-provider'
+    pod 'ArisenSwiftReferenceAuthenticatorSignatureProvider', :path => '../arisen-swift-reference-ios-authenticator-signature-provider'
 end
 
 def set_up_remote_pods
-    pod 'EosioSwift', '~> 0.1.1'
-    pod 'EosioSwiftAbieosSerializationProvider', '~> 0.1.1'
-    pod 'EosioSwiftVault', '~> 0.1.1'
-    pod 'EosioSwiftEcc', '~> 0.1.1'
-    pod 'EosioSwiftVaultSignatureProvider', '~> 0.1.1'
-    pod 'EosioSwiftReferenceAuthenticatorSignatureProvider', '~> 0.1.1'
+    pod 'ArisenSwift', '~> 0.1.1'
+    pod 'ArisenSwiftAbieosSerializationProvider', '~> 0.1.1'
+    pod 'ArisenSwiftVault', '~> 0.1.1'
+    pod 'ArisenSwiftEcc', '~> 0.1.1'
+    pod 'ArisenSwiftVaultSignatureProvider', '~> 0.1.1'
+    pod 'ArisenSwiftReferenceAuthenticatorSignatureProvider', '~> 0.1.1'
 end
 
 if using_local_pods
     # Pull pods from sibling directories if using local pods
-    target 'EosioReferenceAuthenticator' do
-        # Pods for EosioReferenceAuthenticator
+    target 'ArisenReferenceAuthenticator' do
+        # Pods for ArisenReferenceAuthenticator
         set_up_local_pods
         pod 'ReachabilitySwift'
     end
 
-    target 'EosioReferenceAuthenticatorTests' do
+    target 'ArisenReferenceAuthenticatorTests' do
         inherit! :search_paths
         # Pods for testing
         set_up_local_pods
         pod 'SnapshotTesting', '~> 1.1'
     end
 
-    target 'EosioReferenceAuthenticatorUITests' do
+    target 'ArisenReferenceAuthenticatorUITests' do
         inherit! :search_paths
         # Pods for testing, must be all pods
         set_up_local_pods
     end
 else
     # Pull pods from sources above if not using local pods
-    target 'EosioReferenceAuthenticator' do
-        # Pods for EosioReferenceAuthenticator
+    target 'ArisenReferenceAuthenticator' do
+        # Pods for ArisenReferenceAuthenticator
         set_up_remote_pods
         pod 'ReachabilitySwift'
     end
 
-    target 'EosioReferenceAuthenticatorTests' do
+    target 'ArisenReferenceAuthenticatorTests' do
         inherit! :search_paths
         # Pods for testing
         set_up_remote_pods
         pod 'SnapshotTesting', '~> 1.1'
     end
 
-    target 'EosioReferenceAuthenticatorUITests' do
+    target 'ArisenReferenceAuthenticatorUITests' do
         inherit! :search_paths
         # Pods for testing, must be all pods
         set_up_remote_pods
